@@ -1,8 +1,33 @@
 import './App.css'
-import { useState } from 'react'
+import {useEffect, useState} from 'react'
 
 function App() {
     const [score, setScore] = useState(0)
+
+    useEffect(() => {
+        const urls = [
+            'https://pokeapi.co/api/v2/pokemon/1',
+            'https://pokeapi.co/api/v2/pokemon/2',
+            'https://pokeapi.co/api/v2/pokemon/3',
+            'https://pokeapi.co/api/v2/pokemon/4',
+            'https://pokeapi.co/api/v2/pokemon/5',
+            'https://pokeapi.co/api/v2/pokemon/6',
+            'https://pokeapi.co/api/v2/pokemon/7',
+            'https://pokeapi.co/api/v2/pokemon/8',
+        ];
+
+        Promise.all(
+            [fetch(urls[0]).then(res => res.json()),
+                fetch(urls[1]).then(res => res.json()),
+                fetch(urls[2]).then(res => res.json()),
+                fetch(urls[3]).then(res => res.json()),
+                fetch(urls[4]).then(res => res.json()),
+                fetch(urls[5]).then(res => res.json()),
+                fetch(urls[6]).then(res => res.json()),
+                fetch(urls[7]).then(res => res.json()),
+            ]).then(res => console.log(res))
+            .catch(err => console.log(err));
+    }, []);
 
 
   return (
