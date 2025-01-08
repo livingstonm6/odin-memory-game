@@ -21,6 +21,11 @@
 .card {
   padding: 2em;
 }
+.card-container{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+}
 
 .read-the-docs {
   color: #888;

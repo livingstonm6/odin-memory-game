@@ -1,5 +1,6 @@
 import './App.css'
 import {useState} from 'react'
+import Card from './Card'
 
 function App({pokemonData}) {
     const [score, setScore] = useState(0)
@@ -16,6 +17,16 @@ function App({pokemonData}) {
             <div className="header-right">
                 <p>Score: {score}</p>
             </div>
+        </div>
+        <div className="card-container">
+            <Card></Card>
+            <Card></Card>
+            <Card></Card>
+            <Card></Card>
+            <Card></Card>
+            <Card></Card>
+            <Card></Card>
+            <Card></Card>
         </div>
 
     </>
