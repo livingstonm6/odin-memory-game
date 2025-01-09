@@ -3,7 +3,14 @@ import {useState} from 'react'
 import Card from './Card'
 
 function App({apiResponse}) {
-    const [score, setScore] = useState(0)
+    const [score, setScore] = useState(0);
+    const indices = [5, 7, 3, 1, 0, 6, 2, 4];
+
+    // Randomize order
+    for (let i = indices.length - 1; i >= 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [indices[i], indices[j]] = [indices[j], indices[i]];
+    }
 
   return (
     <>
@@ -17,14 +24,14 @@ function App({apiResponse}) {
             </div>
         </div>
         <div className="card-container">
-            <Card data={apiResponse[0]}></Card>
-            <Card data={apiResponse[1]}></Card>
-            <Card data={apiResponse[2]}></Card>
-            <Card data={apiResponse[3]}></Card>
-            <Card data={apiResponse[4]}></Card>
-            <Card data={apiResponse[5]}></Card>
-            <Card data={apiResponse[6]}></Card>
-            <Card data={apiResponse[7]}></Card>
+            <Card data={apiResponse[indices[0]]}></Card>
+            <Card data={apiResponse[indices[1]]}></Card>
+            <Card data={apiResponse[indices[2]]}></Card>
+            <Card data={apiResponse[indices[3]]}></Card>
+            <Card data={apiResponse[indices[4]]}></Card>
+            <Card data={apiResponse[indices[5]]}></Card>
+            <Card data={apiResponse[indices[6]]}></Card>
+            <Card data={apiResponse[indices[7]]}></Card>
         </div>
 
     </>
