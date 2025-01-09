@@ -1,9 +1,10 @@
-function Card({data}){
-    console.log(data);
+function Card({data, clickHandler}){
+    const capitalizedName = data.name.charAt(0).toUpperCase() + data.name.slice(1);
+
     return (
-        <div className="card">
-            <img src={data.sprites.front_default} alt={data.name}></img>
-            <p>{data.name}</p>
+        <div onClick={clickHandler} className="card">
+            <img src={data.sprites.front_default} alt={capitalizedName}></img>
+            <p>{capitalizedName}</p>
         </div>
     )
 
