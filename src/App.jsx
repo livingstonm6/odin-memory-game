@@ -4,6 +4,7 @@ import Card from './Card'
 
 function App({apiResponse}) {
     const [score, setScore] = useState(0);
+    const [highScore, setHighScore] = useState(0);
     const [clicked, setClicked] = useState(new Set());
 
     const indices = [5, 7, 3, 1, 0, 6, 2, 4];
@@ -18,6 +19,9 @@ function App({apiResponse}) {
         console.log(name);
         if (clicked.has(name)){
             alert("Game Over");
+            if (score > highScore){
+                setHighScore(score);
+            }
             setScore(0);
             setClicked(new Set());
             return;
@@ -38,6 +42,7 @@ function App({apiResponse}) {
             </div>
             <div className="header-right">
                 <p>Score: {score}</p>
+                <p>High Score: {highScore}</p>
             </div>
         </div>
         <div className="card-container">
