@@ -1,9 +1,9 @@
-function Card(){
-
+function Card({data}){
+    console.log(data);
     return (
         <div className="card">
-            <div>Placeholder Pokemon Image</div>
-            <p>Placeholder Pokemon Name</p>
+            <img src={data.sprites.front_default} alt={data.name}></img>
+            <p>{data.name}</p>
         </div>
     )
 

@@ -2,10 +2,8 @@ import './App.css'
 import {useState} from 'react'
 import Card from './Card'
 
-function App({pokemonData}) {
+function App({apiResponse}) {
     const [score, setScore] = useState(0)
-
-
 
   return (
     <>
@@ -19,14 +17,14 @@ function App({pokemonData}) {
             </div>
         </div>
         <div className="card-container">
-            <Card></Card>
-            <Card></Card>
-            <Card></Card>
-            <Card></Card>
-            <Card></Card>
-            <Card></Card>
-            <Card></Card>
-            <Card></Card>
+            <Card data={apiResponse[0]}></Card>
+            <Card data={apiResponse[1]}></Card>
+            <Card data={apiResponse[2]}></Card>
+            <Card data={apiResponse[3]}></Card>
+            <Card data={apiResponse[4]}></Card>
+            <Card data={apiResponse[5]}></Card>
+            <Card data={apiResponse[6]}></Card>
+            <Card data={apiResponse[7]}></Card>
         </div>
 
     </>

@@ -25,7 +25,7 @@ Promise.all(
         fetch(urls[7]).then(res => res.json()),
     ]).then(res => createRoot(document.getElementById('root')).render(
         <StrictMode>
-            <App pokemonData={res}/>
+            <App apiResponse={res}/>
         </StrictMode>,
     )
     )
